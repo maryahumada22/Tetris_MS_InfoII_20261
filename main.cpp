@@ -53,37 +53,3 @@ int main() {
     return 0;
 }
 */
-
-/*int main() {
-
-    short options = 0;
-
-    cout << "================ MENU DE PROBLEMAS ================" << endl;
-    cout << "Seleccione una opcion (numeros pares del 2 al 16)" << endl;
-    cout << "2  - Maquina expendedora (Billetes y monedas)" << endl;
-    cout << "4  - Suma de horas (Formato 24 horas)" << endl;
-    cout << "6  - Aproximacion del numero e" << endl;
-    cout << "8  - Suma de multiplos" << endl;
-    cout << "10 - Enesimo numero primo" << endl;
-    cout << "12 - Mayor factor primo" << endl;
-    cout << "14 - Numero palindromo (producto de 3 cifras)" << endl;
-    cout << "16 - Serie de Collatz" << endl;
-    cout << "===================================================" << endl;
-
-    cin >> options;
-
-    switch (options) {
-
-    case 2:
-        cout << "PROBLEMA 2 - MAQUINA EXPENDEDORA" << endl;
-        problema2();
-        break;
-    case 4:
-        cout << "PROBLEMA 2 - MAQUINA EXPENDEDORA" << endl;
-        bajarPieza();
-        break;
-    default:
-        cout << "Opcion invalida. Debe elegir un numero par entre 2 y 16." << endl;
-    }
-}
-*/
