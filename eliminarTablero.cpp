@@ -3,8 +3,8 @@
 
 using namespace std;
 
-void eliminarTablero(uint8_t** matriz, unsigned short int filas) {
-    for (int i = 0; i < filas; i++) {
+void eliminarTablero(uint8_t** matriz, unsigned short int bytes) {
+    for (unsigned short int i = 0; i < bytes; i++) {
         delete[] matriz[i];
     }
     delete[] matriz;

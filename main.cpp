@@ -8,7 +8,7 @@
 
 #include "creartablero.h"
 #include "imprimirTablero.h"
-//#include "pruebas.h"
+#include "pruebas.h"
 #include "eliminarTablero.h"
 
 using namespace std;
@@ -16,13 +16,12 @@ using namespace std;
 int main() {
     cout << "BIENVENIDO A UNA VERSION BARATA DE TETRIS"<<endl;
     cout << "Made by: Santi Garcia y Mary Ahumada"<<endl;
-    unsigned short int alto = 0;   // Si usamos uint8_t o char el tablero se pone raro
+    unsigned short int alto = 0,bits = 0;   // Si usamos uint8_t o char el tablero se pone raro
     cout << "Ingrese el alto: ";   // No usa el tamaño si dado, si no otro...
     cin >> alto;                   // Creo que tiene ver con ASCII.
     /*
     VALIDACIONES de alto
     */
-    unsigned short int bits = 0;
     cout << "Ingrese el ancho (multiplo de 8): ";
     cin >> bits;
     /*
@@ -32,13 +31,18 @@ int main() {
     uint8_t** tablero = nullptr;
 
     tablero = crearTablero(alto,byte);
-    //prueba1(tablero); //aca seria escoger pieza y aparecerla en el tablero
+    prueba1(tablero); //aca seria escoger pieza y aparecerla en el tablero
+    uint8_t* piezaS = new uint8_t[3]{ 0, 0b00011000, 0b00110000 };
     short turnos = 5;
+    imprimirTablero(tablero, piezaS, alto, byte);//muestra por primera vez el tablero y la pieza
     for (short i=0;i < turnos;i++){ //aca seria un while gameOver() != true
-        imprimirTablero(tablero, alto, byte);
-        pedirMovimiento();
+
+        pedirMovimiento(tablero, piezaS);
+        imprimirTablero(tablero, piezaS, alto, byte);
+
     }
     eliminarTablero(tablero,alto);
+    delete[] piezaS; //Esto se debe colocar cuando pase una colision, luego crear otra pieza
 
     return 0;
 }
